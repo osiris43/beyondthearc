@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{game.away_team}} at {{game.home_team}}</h2>
+<div class="row">
+  <div class="col-md-6">
+
+<table class="table table-bordered">
+  <thead>
+    <th>Stat</th>
+    <th>{{game.away_team.abbreviation}}</th>
+    <th>{{game.home_team.abbreviation}}</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PPG</td>
+      <td>{{game.away_team.get_latest_statistic.ppg|floatformat:"4" }}</td>
+      <td>{{game.home_team.get_latest_statistic.ppg|floatformat:"4" }}</td>
+    </tr>
+    <tr>
+      <td>Away PPG/ Home PPG</td>
+      <td>{{game.away_team.get_latest_statistic.away_ppg|floatformat:"4" }}</td>
+      <td>{{game.home_team.get_latest_statistic.home_ppg|floatformat:"4" }}</td>
+    </tr>
+    <tr>
+      <td>Defensive Modifiers</td>
+      <td>{{game.away_team.get_latest_statistic.away_def_mod|floatformat:"4" }}</td>
+      <td>{{game.home_team.get_latest_statistic.home_def_mod|floatformat:"4" }}</td>
+    </tr>
+    <tr>
+      <td>Predicted Points</td>
+      <td>{{away_predicted|floatformat:"4" }}</td>
+      <td>{{home_predicted|floatformat:"4" }}</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <div class="col-md-6">
+
+  </div>
+</div>
+{% endblock %}

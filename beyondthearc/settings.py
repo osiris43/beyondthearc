@@ -24,6 +24,14 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = (
+  '/Users/osiris43/Sites/env/beyondthearc/project/templates',
+  '/Users/osiris43/Sites/env/beyondthearc/project/statistics/templates/statistics',
+)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'statistics',
+    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 class NbaConference(models.Model):
@@ -23,6 +24,9 @@ class NbaTeam(models.Model):
     def __unicode__(self):
         return self.city + ' ' + self.mascot
 
+    def get_latest_statistic(self):
+        return self.nbateamstatistic_set.filter(calculation_date__lt=date.today()).order_by('-calculation_date')[0]
+
     class Meta:
         db_table = 'nba_teams'
 
@@ -33,5 +37,18 @@ class NbaGame(models.Model):
     gametime = models.TimeField()
     season = models.CharField(max_length=200)
 
+
     class Meta:
         db_table = 'nba_games'
+
+class NbaTeamStatistic(models.Model):
+    nba_team = models.ForeignKey(NbaTeam)
+    calculation_date = models.DateTimeField()
+    ppg = models.DecimalField(decimal_places=4, max_digits=7)
+    home_def_mod = models.DecimalField(decimal_places=4, max_digits=7)
+    away_def_mod = models.DecimalField(decimal_places=4, max_digits=7)
+    away_ppg = models.DecimalField(decimal_places=4, max_digits=7)
+    home_ppg = models.DecimalField(decimal_places=4, max_digits=7)
+
+    class Meta:
+        db_table = 'nba_team_statistics'

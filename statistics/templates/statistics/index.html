@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Today's Games</h1>
+{% if todays_games_list %}
+  <ul class="list-group">
+  {% for game in todays_games_list %}
+  <li class="list-group-item"><a href="{% url 'show' game.id %}">{{game.away_team}} @ {{game.home_team}}</a></li>
+  {% endfor %}
+  </ul>
+{% else %}
+<p>No games today</p>
+{% endif %}
+{% endblock %}

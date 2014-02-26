@@ -17,13 +17,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Beyond The Arc</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Beyond The Arc</a>
       </div>
       <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
             <li><a href="/statistics">Statistics</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
           </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -33,6 +33,7 @@
       {% block content %}{% endblock %}
     </div>
   </div>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   {% bootstrap_javascript %}
 </body>
 </html>

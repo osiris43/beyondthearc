@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-home page
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to Beyond the Arc</h1>
+    <p>This is a modest little site built with Django on top of an existing database from a Rails app.  It displays
+    data for upcoming NBA games.  The data can be assumed to be totally incorrect as it hasn't been updated completely.
+    However this is just an example of what 8 hours with Django can result in.</p>
+  </div>
+</div>
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Home</h2>
+          <p>This site is pretty because Twitter Bootstrap is awesome, not because I'm a great designer.  But seriously, with Bootstrap you can do some amazing things.  I built <a href="http://thesportspoolhub.com">The Sports Pool Hub</a> with it.</p>
+          <p><a class="btn btn-default" href="http://www.thesportspoolhub.com" role="button">View my other work&raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>The Stats</h2>
+          <p>You can see the NBA games scheduled for today.  Listed for each game is each team's Points per game (PPG), PPG home and away, a defensive modifier which is a cumulative statistic based on the team's prior performance and the predicted points for the team based on their PPG and the opponent's defensive modifier.</p>
+          <p><a class="btn btn-default" href="/statistics" role="button">View Stats&raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Contact Me</h2>
+          <p>Seriously, you should contact me.  I spent 8 hours putting together a Django site with zero prior experience just to show what might be possible.  In my day job, I'm a c#/Ruby/javascript developer but I know some Python and have built a decent sized Rails App (where "decent sized" is judged by code base, not users but still).</p>
+          <p><a class="btn btn-default" href="/contact" role="button">Contact me&raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Osiris Productions 2014</p>
+      </footer>
+    </div> <!-- /container -->
 {% endblock %}

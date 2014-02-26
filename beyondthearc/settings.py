@@ -21,10 +21,6 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-TEMPLATE_DIRS = (
-  '/Users/osiris43/Sites/env/beyondthearc/project/templates',
-  '/Users/osiris43/Sites/env/beyondthearc/project/statistics/templates/statistics',
-)
 
 
 
@@ -83,6 +79,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, "templates"),
+    os.path.join(BASE_DIR, "statistics/templates/statistics"),
+    # here you can add another templates directory if you wish.
+)
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
